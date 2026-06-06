@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: hw
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/likelion_hw?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  defer-datasource-initialization: true
+
+jwt:
+  secret: "cmVhbGVzdGF0ZS1hcHAtand0LXNlY3JldC1rZXktbXVzdC1iZS1hdC1sZWFzdC0zMmNoYXJz"
+  access-token-expiration: 1800000
+  refresh-token-expiration: 604800000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /api-docs
+
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:5173
